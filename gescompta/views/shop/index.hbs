@@ -1,62 +1,49 @@
-<div class="row">
-	<div class="card-deck">
-		<div class="card" style="width: 18rem;">
-		  <img class="card-img-top" src="images/1_canon-ef-14mm-2.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <h5 class="card-title">Objectif 1</h5>
-		    <h6 class="card-title">10€</h6>
-		    <p class="card-text">Stimulos ad deberet praeceps haec autem factitasse obstinatum potius truculenti trudebat similia eum exitium reducere.</p>
-		    <a href="#" class="btn btn-primary">Commander</a>
-		  </div>
+	<div class="row">
+		<div class="card-deck">
+
+{{# each products}}
+		<div class="col col-md-4">
+		  <div class="card" style="width: 18rem;">
+			  <img class="card-img-top" src="{{this.imagePath}}" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">{{this.title}}</h5>
+			    <h6 class="card-title">{{this.price}}€</h6>
+			    <p class="card-text">{{this.description}}</p>
+			    <button class="btn btn-primary" onclick="$('#myModal').modal('show')">Commander</button>
+			  </div>
+			</div>
 		</div>
-		<div class="card" style="width: 18rem;">
-		  <img class="card-img-top" src="images/1_canon-ef-14mm-2.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <h5 class="card-title">Objectif 1</h5>
-		    <h6 class="card-title">10€</h6>
-		    <p class="card-text">Stimulos ad deberet praeceps haec autem factitasse obstinatum potius truculenti trudebat similia eum exitium reducere.</p>
-		    <a href="#" class="btn btn-primary">Commander</a>
-		  </div>
-		</div>
-		<div class="card" style="width: 18rem;">
-		  <img class="card-img-top" src="images/1_canon-ef-14mm-2.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <h5 class="card-title">Objectif 1</h5>
-		    <h6 class="card-title">10€</h6>
-		    <p class="card-text">Stimulos ad deberet praeceps haec autem factitasse obstinatum potius truculenti trudebat similia eum exitium reducere.</p>
-		    <a href="#" class="btn btn-primary">Commander</a>
-		  </div>
-		</div>
-	</div>
+{{/each}}
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      	<form action="/checkout" method="post" id="checkout_form">
+        <h5 class="modal-title" id="exampleModalLabel">Séléctionnez la quantité</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	        <div class="form-group">
+		    <label for="selectQtity">Quantité</label>
+			    <select class="form-control" name="qtity" id="selectQtity">
+			      <option>1</option>
+			      <option>2</option>
+			      <option>3</option>
+			      <option>4</option>
+			      <option>5</option>
+			    </select>
+	  		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="submit" class="btn btn-primary">Commander</button>
+      </div>
+  	</form>
+    </div>
+  </div>
 </div>
-<div class="row">
-	<div class="card-deck">
-		<div class="card" style="width: 18rem;">
-		  <img class="card-img-top" src="images/1_canon-ef-14mm-2.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <h5 class="card-title">Objectif 1</h5>
-		    <h6 class="card-title">10€</h6>
-		    <p class="card-text">Stimulos ad deberet praeceps haec autem factitasse obstinatum potius truculenti trudebat similia eum exitium reducere.</p>
-		    <a href="#" class="btn btn-primary">Commander</a>
-		  </div>
-		</div>
-		<div class="card" style="width: 18rem;">
-		  <img class="card-img-top" src="images/1_canon-ef-14mm-2.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <h5 class="card-title">Objectif 1</h5>
-		    <h6 class="card-title">10€</h6>
-		    <p class="card-text">Stimulos ad deberet praeceps haec autem factitasse obstinatum potius truculenti trudebat similia eum exitium reducere.</p>
-		    <a href="#" class="btn btn-primary">Commander</a>
-		  </div>
-		</div>
-		<div class="card" style="width: 18rem;">
-		  <img class="card-img-top" src="images/1_canon-ef-14mm-2.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <h5 class="card-title">Objectif 1</h5>
-		    <h6 class="card-title">10€</h6>
-		    <p class="card-text">Stimulos ad deberet praeceps haec autem factitasse obstinatum potius truculenti trudebat similia eum exitium reducere.</p>
-		    <a href="#" class="btn btn-primary">Commander</a>
-		  </div>
-		</div>
-	</div>
 </div>
