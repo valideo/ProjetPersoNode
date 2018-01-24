@@ -23,9 +23,9 @@ router.post('/checkout', function(req, res, next) {
 		console.log('start save order');
         var order = new Orders({
             user: req.user,
-            nameProduct: "ajoute toi ptn",
+            nameProduct: "req.body.name",
             qtity: req.body.qtity,
-    		price: 1,
+    		price: req.body.price,
         });
         console.log(order);
         order.save(function(err, result) {

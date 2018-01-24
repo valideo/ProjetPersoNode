@@ -3,10 +3,13 @@ var router = express.Router();
 var csrf = require('csurf');
 var passport = require('passport');
 
+Orders = require('../models/orders');
+
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
 router.get('/profile', isLoggedIn, function (req, res, next) {
+    Orders.find({user: req.user});
     res.render('user/profile');
 });
 
